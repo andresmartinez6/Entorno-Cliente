@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/solar/bootstrap.min.css">
+    <style>
+        div.compras {
+            position: absolute;
+            top: 50px;
+            align-items: center;
+            width: 500px;
+            right: 0;
+            top: 0;
+            display: none;
+        }
+
+        div.carritoCompras:hover div.compras {
+            display: flex;
+        }
+        div.card{
+            min-height: 600px;
+        }
+        .card-header img{
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container d-flex justify-content-between align-items-center p-5 my-5 border">
+            <div>LOGO</div>
+            <div class="carritoCompras position-relative">
+                <!-- CARRITO DE COMPRA -->
+                <button class="btn bg-dark text-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-cart-dash" viewBox="0 0 16 16">
+                        <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z" />
+                        <path
+                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                    </svg>
+                </button>
+                <div class="container compras position-absolute">
+                    <div class="compras row align-items-center my-3 py-3 border-bottom">
+                        <div class="col-md-3">
+                            <img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-md-3">
+                            <p>Producto 1</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>100€</p>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn-close"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FIN DE CARRITO DE COMPRAS -->
+            </div>
+        </div>
+    </header>
+    <section id="productos" class="container border p-5">
+        <div class="row">
+            <!-- INICIO COL
+            <div class="col-md-4">
+                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body">
+                        <h4 class="card-title">titulo.producto</h4>
+                        <p class="card-text">descripcion.producto.</p>
+                        <p>100€</p>
+                        <button class="btn btn-danger">
+
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- FIN COL -->
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
