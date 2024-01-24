@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <style>
+        body{
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .cargando{
+            height: 80px;
+            width: 80px;
+            border: solid 10px crimson;
+            border-top-color: black;
+            border-radius: 50%;
+            animation: rotar 1s  infinite;
+            
+        }
+        @keyframes rotar{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cargando"></div>
+    <div class="container">
+        <div class="row">
+            <!-- CUADRO 1
+            <div class="col-md-4">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/1000" alt="" class="img-fluid">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Primary card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- CUADRO 2
+            <div class="col-md-4">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/1000" alt="" class="img-fluid">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Primary card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+            CUADRO 3 
+            <div class="col-md-4">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/1000" alt="" class="img-fluid">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Primary card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="./JS.js"></script>
+</body>
+</html>

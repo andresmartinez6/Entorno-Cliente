@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            border: solid 5px black;
+        }
+        .highlighted { background-color: yellow; width: 100px; height: 100px;transition:all 1s}
+
+        /* #fruitList :last-child{
+            background-color: yellow;
+        } */
+        p::before, p::after{
+            content:"++++++";
+            background-color: yellow;
+        }
+
+        div#caja :nth-child(2){
+            border-radius : 50%;
+        }
+        
+        /* div#caja1{
+            padding: 20px;
+            background-color:tomato;
+        } */
+
+    </style>
+</head>
+<body>
+
+    <div id="caja1" class="efecto" >
+        caja
+    </div>
+
+
+    <!-- <div id="caja">
+        <a href="https://www.google.es">Enlace1</a>
+
+        <img src="https://picsum.photos/200/300" alt="">
+
+        <img src="https://picsum.photos/50/50" alt="">
+
+
+    </div> -->
+
+
+<script>
+    let caja1 = document.querySelector("#caja1");
+    caja1.style.padding = "20px";
+    // caja1.style.backgroundColor = "tomato";
+    // caja1.style['background-color'] = "tomato";
+
+
+// let img1 = document.querySelector("div#caja :nth-child(2)");
+
+// src1 = img1.getAttribute("src");
+
+
+// let img2 = document.querySelector("div#caja :nth-child(3)");
+
+// img2.setAttribute("src",src1);
+/* 
+Escribe una función Arrow que calcule el descuento según el tipo de cliente. * Si es "VIP" el descuento es del 20%, * Si es "Regular" es del 10% * Si es "Nuevo" no tiene descuento.
+Imprimir en la consola el descuento del cliente VIP, haciendo uso de la función creada anteriormente
+*/
+
+// let calcular = tipo => {
+//     switch (tipo) {
+//         case "VIP":
+//         console.log("Tienes..... 20%");       
+//             break;
+//          case "Regular":
+//         console.log("Tienes..... 10%");       
+//             break;
+//         default:
+//         console.log("No Tienes descuento");         
+//             break;
+//     }
+// }
+
+
+</script>   
+
+
+<script src="js1.js"></script>
+
+
+
+
+</body>
+</html>   

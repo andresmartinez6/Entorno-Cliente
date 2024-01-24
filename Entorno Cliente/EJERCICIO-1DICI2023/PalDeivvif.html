@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootstrapWatch</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/cyborg/bootstrap.min.css">
+    <style>
+        .progressBar {
+            width: 0%;
+            height: 5px;
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            background-color: #f3f3f3;
+            overflow: hidden;
+            animation: animarBarra auto linear;
+            animation-timeline: scroll(root block);
+        }
+
+        @keyframes animarBarra {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-3">
+        <div class="form-group">
+            <div class="col-12">
+                <input type="search" name="buscar" class="form-control" placeholder="Buscar por nombre">
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div class="row">
+            <!-- <div class="col-md-4">
+            <div class="card border-primary mb-3">
+                <div class="card-header">
+                    <img src="https://robohash.org/hicveldicta.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Primary card title</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                </div>
+            </div>
+           </div> -->
+        </div>
+    </div>
+
+    <script src="./datos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let row = document.querySelector(".row");
+            let barra = document.createElement("div");
+            barra.classList.add("progressBar");
+            document.body.append(barra);
+            users.forEach(usuario => {
+                // console.log(usuario.firstName, usuario.lastName);
+                row.innerHTML += `<div class="col-md-4">
+            <div class="card border-primary mb-3">
+                <div class="card-header">
+                    <img src="${usuario.image}" alt="" class="img-fluid">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">${usuario.firstName} ${usuario.lastName}</h4>
+                    <p class="card-text">Ciudad:${usuario.address.city} </p>
+                    <p>Dirección: ${usuario.address.address}</p>
+                </div>
+            </div>
+           </div>`;
+            });
+
+            let search = document.querySelector("input[type=search]");
+            search.addEventListener("input", (event) => {
+                console.log(event.target.value);
+                let palabra = event.target.value;
+                let cards = document.querySelectorAll(".col-md-4");
+                cards.forEach((card) => {
+                    if (card.innerText.indexOf(palabra) < 0) {
+                        card.classList.add("d-none");//esto es una propiedad del bootstrap que esconde el elemento
+                    } else {
+                        card.classList.remove("d-none");
+                    }
+                });
+                
+            });
+        });
+    </script>
+
+</body>
+
+</html>

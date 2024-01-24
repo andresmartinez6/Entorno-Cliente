@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .cargando {
+            height: 80px;
+            width: 80px;
+            border: solid 10px crimson;
+            border-top-color: black;
+            border-radius: 50%;
+            animation: rotar 1s infinite;
+
+        }
+
+        @keyframes rotar {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Detalle Producto</h1>
+        <div class="cargando"></div>
+        <div class="container">
+            <div class="row"></div>
+        </div>
+    </main>
+
+    <script>
+        const urlDetail = new URL(window.location.href);//crea un objeto de tipo URL
+
+        const id = urlDetail.searchParams.get('id');//Busca el prámetro en el objeto
+        console.log(id);
+
+        const url = `https://dummyjson.com/products/${id}`;
+
+        const row = document.querySelector('div.container .row');
+        const cargar = document.querySelector("div.cargando");
+
+        fetch(url).then((respuesta) => {
+            return respuesta.json();
+        }).then((producto) => {
+            cargar.style.display='none';
+            row.innerHTML += `
+            <div class="col-md-5">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header">
+                        <picture>
+                            <source srcset="${producto.images[0]}" class="img-fluid">
+                            <img src="./media/ZKZg.gif" alt="" class="img-fluid">
+                        </picture>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">${producto.brand}</h4>
+                        <p class="card-text">${producto.description}</p>
+                        <p class="text-primary-emphasis">${producto.price}.00€</p>
+                    </div>
+                </div>
+            </div>`;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://bootswatch.com/5/lux/bootstrap.min.css"
+		/>
+		<style>
+			body {
+				min-height: 100vh;
+				display: grid;
+				place-content: center;
+			}
+			.cargando {
+				width: 80px;
+				height: 80px;
+				border: solid 10px crimson;
+				border-top-color: white;
+				border-radius: 50%;
+				animation: rotar 1s infinite;
+			}
+
+			@keyframes rotar {
+				0% {
+					transform: rotate(0);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div class="cargando"></div> -->
+		<div class="container">
+			<div class="row">
+				<!--INICIO COLUMNA -->
+
+				<div class="col-md-4">
+					<div class="card border-danger mb-3 pt-3">
+						<div class="card-header">
+							<img src="https://picsum.photos/1000" alt="" class="img-fluid" />
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Warning card title</h4>
+							<p class="card-text">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!--FIN COLUMNA  -->
+
+				<!--INICIO COLUMNA -->
+
+				<div class="col-md-4">
+					<div class="card border-danger mb-3 pt-3">
+						<div class="card-header">
+							<img src="https://picsum.photos/1000" alt="" class="img-fluid" />
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Warning card title</h4>
+							<p class="card-text">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!--FIN COLUMNA  -->
+
+				<!--INICIO COLUMNA -->
+
+				<div class="col-md-4">
+					<div class="card border-danger mb-3 pt-3">
+						<div class="card-header">
+							<img src="https://picsum.photos/1000" alt="" class="img-fluid" />
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Warning card title</h4>
+							<p class="card-text">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!--FIN COLUMNA  -->
+			</div>
+		</div>
+
+		<script src="index.js"></script>
+	</body>
+</html>

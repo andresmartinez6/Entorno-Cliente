@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Urbanist:wght@500;800;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body,html{
+	font-family: 'Urbanist', sans-serif;
+	font-size: 18px;
+}
+input[type="button"]{
+	padding:20px 50px;
+	display:inline-block;
+	margin: 10px;
+	cursor: pointer;
+	border:none;
+	box-shadow: 0 0 10px rgba(0,0,0,.4);
+	background-color: crimson;
+	color: white;
+	font-size: 18px;
+}
+input[type="button"]:hover {
+	background-color:darkorange
+}
+.decorador{
+	text-align: center;
+	border:2px solid black;
+}
+.decorador h3{
+	margin-bottom: 20px;
+}
+#pantallas {
+	margin:20px auto;
+	width:60%;	
+	display: flex;
+	justify-content: space-between;
+}
+#pantallas > div{	
+	flex-basis: 32%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow:column;
+	padding: 20px;
+} 
+	
+
+
+#botonera{
+	width:60%;
+	margin:auto;
+	text-align: center;
+	border:2px solid;
+	background-color:lightblue; 
+	color: white;
+	padding:50px;
+}

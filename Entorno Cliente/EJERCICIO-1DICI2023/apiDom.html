@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://bootswatch.com/5/vapor/bootstrap.min.css"
+		/>
+		<style>
+			/* img {
+				filter: grayscale(1);
+				transition: all 1s;
+			}
+			img:hover {
+				filter: grayscale(0);
+			} */
+			.progressBar {
+				width: 0%;
+				height: 10px;
+				position: fixed;
+				top: 0;
+				z-index: 100;
+				background-color: rgba(255, 255, 255, 0.4);
+				backdrop-filter: invert(1);
+				/* filter: ; */
+
+				animation: animaBarra auto linear;
+				animation-timeline: scroll(root block);
+			}
+
+			@keyframes animaBarra {
+				0% {
+					width: 0;
+				}
+				100% {
+					width: 100%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div id="progressBar"></div> -->
+		<div class="container">
+			<div class="form-group row">
+				<div class="col-12">
+					<input
+						type="search"
+						class="form-control my-3"
+						id="staticEmail"
+						placeholder="Buscar por nombre"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-md-4">
+					<div class="card border-primary mb-3">
+						<div class="card-header">
+							<img src="https://robohash.org/hicveldicta.png" alt="" />
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Primary card title</h4>
+							<p class="card-text">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<script src="js/datos.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let progressBar = document.createElement("div");
+				progressBar.className = "progressBar ";
+				document.body.append(progressBar);
+
+				//
+				let row = document.querySelector(".row");
+				users.forEach((user) => {
+					// console.log(user.firstName, user.lastName);
+					row.innerHTML += `
+			                 <div class="col-md-4">
+					<div class="card border-primary mb-3">
+						<div class="card-header">
+							<img src="${user.image}" alt="" class="img-fluid" />
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">${user.firstName} ${user.lastName}</h4>
+							<p class="card-text">
+			                             <i>${user.email} </i>
+
+							</p>
+						</div>
+					</div>
+				</div>
+
+			                 `;
+				});
+
+				let buscador = document.querySelector("input[type='search']");
+				buscador.addEventListener("input", (e) => {});
+			});
+		</script>
+	</body>
+</html>

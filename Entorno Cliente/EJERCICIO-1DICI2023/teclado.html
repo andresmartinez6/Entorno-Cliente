@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			section {
+				min-height: 100vh;
+			}
+			.c1 {
+				background-color: crimson;
+			}
+			.c2 {
+				background-color: darkcyan;
+			}
+			.c3 {
+				background-color: darkgoldenrod;
+			}
+			.hide {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<section id="pantalla1" class="c1"></section>
+		<section id="pantalla2" class="c2"></section>
+		<section id="pantalla3" class="c3"></section>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let sec1 = document.querySelector("#pantalla1");
+				let sec2 = document.querySelector("#pantalla2");
+				let sec3 = document.querySelector("#pantalla3");
+
+				sec2.classList.add("hide");
+				sec3.classList.add("hide");
+				document.addEventListener("keydown", (e) => {
+					// console.log(e.key);
+					if (e.key == "E") {
+						sec1.classList.add("hide");
+						sec2.classList.remove("hide");
+						sec3.classList.add("hide");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

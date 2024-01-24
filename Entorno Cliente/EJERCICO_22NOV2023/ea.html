@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .c1 {
+            width: 200px;
+            height: 200px;
+            margin: 30px 0;
+            background-color: red;
+            transform: translateX(-100%);
+            transition: all 1s ease-in-out;
+        }
+
+        .c2 {
+            width: 200px;
+            height: 200px;
+            margin: 30px 0;
+            background-color: blue;
+            transform: translateX(-100%);
+            transition: all 1s ease-in-out;
+        }
+
+        .c3 {
+            width: 200px;
+            height: 200px;
+            margin: 30px 0;
+            background-color: green;
+            transform: translateX(-100%);
+            transition: all 1s ease-in-out;
+        }
+
+        .animar {
+            background-color: rgb(255, 102, 0);
+        }
+
+        .separacion{
+            min-height: 100vh;
+        }
+        .aparecer{
+            transform: translateX(0%);
+        }
+
+        a.flecha{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background-color: crimson;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #000000;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let cajas=document.querySelectorAll("div.efecto");
+            window.addEventListener('scroll',event=>{
+                // console.log('SCROLL DE VENTANA', window.scrollY);
+                // console.log('DISTANCIA DE LA CAJA 1 AL TOPE DE ARRIBA', cajas[0].offsetTop);
+                // console.log('DISTANCIA DE LA CAJA 2 AL TOPE DE ARRIBA', cajas[1].offsetTop);
+                cajas.forEach(caja=>{
+                    if(window.scrollY>=caja.offsetTop - 500){
+                        caja.classList.add("aparecer");
+                    }else{
+                        caja.classList.remove("aparecer");
+                    }
+                });
+            });
+
+            let flecha = document.querySelector("a.flecha");
+            // flecha.addEventListener("click", e=>{
+            //     e.preventDefault();
+            //     window.scroll({
+            //         top:0,
+            //         behavior:"smooth"
+            //     })
+            // });
+
+            // window.addEventListener("scroll",e=>{
+            //     if(window.scrollY >=300){
+            //         flecha.style.opacity="1";
+            //     }else{
+            //         flecha.style.opacity="0";
+            //     }
+            // }) 
+        });
+    </script>
+</head>
+
+<body>
+    <div >
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugiat quibusdam cum, quae temporibus vel laudantium, minima sint asperiores repellendus inventore recusandae, nulla tempora alias veritatis repellat? Consequuntur maxime adipisci nemo, hic possimus quidem sunt amet quibusdam quisquam repellendus dicta! Quod corrupti expedita sequi rem in molestiae accusantium vel aspernatur, similique, autem aliquam labore odio doloremque reprehenderit. Voluptatum debitis earum rerum facere magni, repellat dolores porro optio, corrupti at vitae molestiae perferendis maiores vel. Nobis voluptate iste praesentium nemo similique ducimus. Labore alias sapiente reiciendis repellat provident beatae, laboriosam minima, ipsa amet iste doloribus odit, perferendis ex ullam. Eius velit iure sit quam libero, ducimus facilis, dicta necessitatibus nesciunt ea amet molestias ipsum omnis possimus eum. Eaque expedita in, sint laboriosam repellat officiis iusto a sit officia reprehenderit consectetur, nostrum placeat minus itaque, ut quibusdam vero? Amet minus natus nobis cupiditate rerum tempore, quia repudiandae iusto. Dolore, magnam at architecto in quod delectus similique accusamus. Nam omnis, ducimus soluta ea earum molestias itaque aut, perferendis provident illum libero, voluptatem ut dignissimos dolores sint natus architecto aspernatur numquam deserunt quo non! Incidunt nisi libero error iusto perspiciatis eaque, magnam est ex illo corrupti aspernatur labore nemo repellendus in saepe repudiandae suscipit officiis, iste impedit. Aspernatur doloremque voluptas distinctio corporis, quis at facere sed sequi deserunt non vitae maiores architecto! Molestiae enim deleniti neque consequuntur facere assumenda tempora provident sunt officia laboriosam, amet modi ex asperiores tempore, magnam sed. Voluptatem qui beatae incidunt neque, eius nisi, nobis veniam non labore dolor odit quia maxime, nemo laborum autem saepe commodi aspernatur repudiandae sint alias. Cupiditate deleniti incidunt maiores est quo totam cum in, quam dolorum ad. Aliquam excepturi sapiente modi laborum, minima alias vitae deserunt fuga libero tenetur saepe cum! Vel nam dignissimos officia incidunt, explicabo sunt neque expedita suscipit recusandae eveniet saepe natus nisi voluptatem alias veritatis ratione tenetur sequi iste quaerat facilis optio, quod deleniti porro? Perspiciatis molestias voluptatum numquam quod voluptatibus neque commodi, vitae est? Minus repellat voluptas harum autem itaque voluptatem temporibus vel sequi iure cupiditate natus voluptatibus atque, quae sit obcaecati. Maxime provident ab quo esse odit non eveniet, recusandae architecto accusamus culpa molestias! Ratione autem illo enim nostrum a nulla! Accusantium assumenda commodi veniam eaque ipsum aliquid nostrum, illo quas, quis nemo odit accusamus. Perferendis, vel, placeat minus fugit ducimus dolor tempora voluptas sint explicabo assumenda praesentium ab deleniti dolore voluptates temporibus. Blanditiis incidunt corporis fugit distinctio quibusdam? Distinctio doloremque nam aliquam ad dolorum mollitia iste, quo repellendus obcaecati officiis repudiandae tempora voluptatem iusto nobis modi excepturi magnam cum, labore deserunt eligendi porro! Quam repellendus animi ipsam quasi adipisci, sunt fuga culpa numquam consequuntur eius doloribus voluptatem architecto eveniet quas praesentium voluptas consectetur quibusdam ad quidem repudiandae libero in? Eligendi quas, repellendus dolorem nihil saepe enim, mollitia voluptate minima repudiandae maiores maxime, quia consequatur neque doloribus veniam amet! Commodi perferendis doloremque cupiditate incidunt! Libero, sit. Consequuntur esse quam voluptas. Necessitatibus, sed at maxime soluta ea deleniti sapiente, quae tempora, magnam sunt dolores vitae? Voluptas dolore beatae doloremque provident similique numquam aliquid saepe sunt architecto doloribus dolorem maxime, in velit placeat reiciendis magnam voluptates omnis ratione deleniti inventore et praesentium nemo itaque. Minus, cupiditate eum, deleniti doloremque, omnis consectetur odio consequuntur id voluptatibus quibusdam dolore. Similique labore nisi reiciendis eaque ut recusandae qui blanditiis tempora, possimus alias explicabo velit minima illum tenetur nemo laudantium. Corporis quam veniam rem nihil repudiandae ducimus repellendus sequi, aliquid, ad laudantium, ipsam possimus adipisci dolore ullam exercitationem velit pariatur qui iure praesentium eum ea. Nobis harum delectus illum distinctio unde et, cum libero, tenetur doloremque nihil autem saepe aperiam, repellat ipsa voluptate totam sunt repudiandae voluptatem fugit culpa dolorum. Eveniet fugit quae officia non corrupti in laborum architecto explicabo, omnis voluptas recusandae adipisci deleniti dicta. Quo, dignissimos excepturi beatae cum debitis voluptate culpa, repellendus facilis facere unde earum ea! Tempora deleniti inventore necessitatibus vero! Qui quasi cupiditate possimus, consectetur officiis adipisci aliquid, sequi error odit, quisquam molestiae eius illum quis amet magnam quia tenetur! Quis, dolores. Magnam eos nostrum molestias atque odio nulla veritatis nemo porro provident, soluta quis, officiis praesentium. Asperiores voluptatibus perferendis rerum minus iusto in praesentium exercitationem rem ipsum, quo adipisci aperiam sapiente neque quia placeat, beatae nihil voluptas eius quisquam cupiditate excepturi porro laborum sint. Quidem consequuntur quisquam vero asperiores ex explicabo mollitia ducimus nihil recusandae rem non fugit a molestiae modi maiores, iure laborum veniam voluptates et eveniet nemo dicta possimus illum. Voluptatem voluptatum, rerum architecto possimus, nam alias doloremque numquam quas maiores accusantium, in non nisi qui? Omnis itaque, neque hic vero rem aperiam expedita nihil. Blanditiis distinctio, dignissimos odit accusamus tempore molestiae quisquam atque ex explicabo dolorem eveniet aut deserunt porro minima? Excepturi eligendi ab est porro a, ipsa corporis et, sunt iure minus voluptatum dolorem repellendus nulla at voluptatem, veritatis quaerat cupiditate numquam itaque optio temporibus unde soluta nihil quis. Quis delectus necessitatibus sequi animi, cupiditate deserunt provident voluptates architecto ratione odit illo temporibus consequatur nisi dolor. Nihil natus non illum dolorem a quod doloribus delectus at? Animi aperiam quaerat alias ea distinctio adipisci unde quasi, beatae ab. Ullam deserunt hic beatae fugiat sed modi voluptatum magni veniam necessitatibus dignissimos nemo alias itaque esse magnam fugit, et libero? Sunt, tenetur hic! Corrupti placeat suscipit ipsam vero ratione nisi dolores ipsum, ex hic voluptatibus. Facilis ducimus dicta obcaecati aspernatur quibusdam enim totam alias laudantium corrupti doloribus? Ab reiciendis esse deserunt facilis magnam adipisci blanditiis ipsam dolorum illum placeat nemo excepturi voluptas nobis id repellendus laudantium veritatis, consectetur fugit non. Consequuntur possimus porro fugit ducimus officia doloribus blanditiis consequatur repellat dolore doloremque laborum aspernatur assumenda vel aperiam eveniet id modi, necessitatibus iste cumque eius non explicabo. Quo sed soluta fugit necessitatibus? Reiciendis, voluptates? Ipsum praesentium debitis illo porro, iusto vitae voluptatibus, dolor quae at maxime doloribus quod fugiat error pariatur libero minima repellendus! Eius molestiae, rem pariatur dignissimos quis tenetur voluptatem facilis quas ipsa accusantium dolore nostrum blanditiis commodi ullam id deserunt voluptatibus beatae quia adipisci, ducimus expedita. Molestias, ex alias laborum aperiam molestiae sit amet quidem.</p>
+    </div>
+
+    <div class="c1 efecto"></div>
+    <div class="c2 efecto"></div>
+    <div class="c3 efecto"></div>
+
+
+    <a href="" class="flecha">&#8593;</a>
+
+    <script>
+        let flecha = document.querySelector("a.flecha");
+        flecha.addEventListener("click", e=>{
+            e.preventDefault();
+            window.scroll({
+                top:0,
+                behavior:"smooth"
+            })
+        });
+
+        window.addEventListener("scroll",e=>{
+            if(window.scrollY >=300){
+                flecha.style.opacity="1";
+            }else{
+                flecha.style.opacity="0";
+            }
+        }) 
+    </script>
+</body>
+
+</html>
