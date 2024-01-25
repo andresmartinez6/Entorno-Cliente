@@ -4,7 +4,16 @@ const URL = "https://dummyjson.com/products";
 let row = document.querySelector("section#productos .row");
 let containerCarrito = document.querySelector("header div.compras");
 let numProductosCarrito = document.querySelector(".carritoCompras span");
-let carrito = [];
+
+let carrito=JSON.parse(localStorage.getItem("carrito")) || [];
+
+localStorage.getItem("carrito");
+
+function almacenarEnMemoria(){
+
+  localStorage.setItem("carrito",JSON.stringify(carrito));
+
+}
 
 let cantidadTotalCarrito = carrito.reduce((acum, producto) => {
   return acum + producto.cantidad;
@@ -38,6 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarProductos();
 });
 
+//numero total de los productos
+function totalProductosCarrito(){
+    returncarrito.reduce((acum,obj)=>{
+      return acum+obj.cantidad
+    },0);
+}
+
+console.log(totalProductosCarrito);
+
 function agregarAlCarrito(elemento, id) {
   cantidadTotalCarrito++;
 
@@ -66,6 +84,8 @@ function agregarAlCarrito(elemento, id) {
   console.log(carrito);
 
   rellenarCarrito();
+  almacenarEnMemoria();
+
 }
 
 function rellenarCarrito() {
@@ -108,6 +128,8 @@ function borrarProductoCarrito(elemento, id) {
 
   elemento.parentElement.parentElement.remove();
   carrito = carrito.filter(producto => producto.id !== id);
+  almacenarEnMemoria();
+
 }
 
 function restarDelCarrito(id) {
@@ -121,3 +143,5 @@ function restarDelCarrito(id) {
 function limpiar() {
   containerCarrito.innerHTML = "";
 }
+
+
